@@ -5,7 +5,7 @@ using namespace std;
  
 signed main() 
 {
-	int tttt=1; //cin>>tttt;
+	int tests=1; //cin>>tests;
 	while(tttt--)
 	{
 		int n; cin>>n;
