@@ -31,7 +31,7 @@ signed main()
 					sum_here += a[j];
 				}
 			}
-			v.pb(sum_here);
+			v.push_back(sum_here);
 		}
 		for(int i: v)
 		{
