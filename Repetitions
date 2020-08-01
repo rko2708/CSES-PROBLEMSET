@@ -1,0 +1,26 @@
+Problem Statement:
+You are given a DNA sequence: a string consisting of characters A, C, G, and T. Your task is to find the longest repetition in the sequence. 
+This is a maximum-length substring containing only one type of character.
+
+#include <bits/stdc++.h>
+using namespace std;
+#define int long long
+signed main() 
+{
+	ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+	int tests = 1; //cin>>tests;
+	while(tests--)
+	{
+		string s; cin>>s;
+		int ans = 1;
+		s+= '$';
+		int c = 1;
+		for(int i=0;i<sz(s);i++)
+		{
+			if(s[i] == s[i+1]) c++;
+			else ans = max(ans, c), c = 1;
+		}
+		cout<<ans;
+	}
+	return 0;
+}
