@@ -1,0 +1,21 @@
+Problem Statement:
+Your task is to count for k=1,2,…,n the number of ways two knights can be placed on a k×k chessboard so that they do not attack each other.
+
+#include <bits/stdc++.h>
+using namespace std;
+#define int long long
+const int mod = 1e9 + 7;
+signed main() 
+{
+	ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+	int tests = 1; //cin>>tests;
+	while(tests--)
+	{
+		int n; cin>>n;
+		for(int i=1;i<=n;i++)
+		{
+			cout << ((i*i)*(i*i - 1))/2 - 4*(i-1)*(i-2)<<nl;
+		}
+	}
+	return 0;
+}
