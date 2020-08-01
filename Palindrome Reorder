@@ -1,0 +1,74 @@
+Problem Statement:
+Given a string, your task is to reorder its letters in such a way that it becomes a palindrome (i.e., it reads the same forwards and backwards).
+ 
+#include <bits/stdc++.h>
+using namespace std;
+#define int long long
+signed main() 
+{
+	ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+	int tests = 1; //cin>>tests;
+	while(tests--)
+	{
+		string s; cin>>s;
+		if((int)s.size() & 1)
+		{
+			map<char,int> m;
+			int times = 0;
+			char ch;
+			for(int i=0;i<(int)s.size();i++) m[s[i]]++;
+			for(auto it: m)
+			{
+				if(it.second & 1)
+				{
+					times++;
+					ch = it.first;
+					if(times > 1)
+					{
+						cout<<"NO SOLUTION\n";
+						return 0;
+					}
+				}
+			}
+			string ss = "";
+			for(auto it: m)
+			{
+				int x = it.second / 2;
+				while(x--)
+				{
+					ss += it.first;
+				}
+			}
+			cout<<ss;
+			cout<<ch;
+			reverse(ss.begin(), ss.end());
+			cout<<ss;
+		}
+		else
+		{
+			map<char,int> m;
+			for(int i=0;i<(int)s.size();i++) m[s[i]]++;
+			for(auto it: m)
+			{
+				if(it.second & 1)
+				{
+					cout<<"NO SOLUTION\n";
+					return 0;
+				}
+			}
+			string ss = "";
+			for(auto it: m)
+			{
+				int x = it.second / 2;
+				while(x--)
+				{
+					ss += it.first;
+				}
+			}
+			cout<<ss;
+			reverse(ss.begin(), ss.end());
+			cout<<ss;
+		}
+	}
+	return 0;
+}
