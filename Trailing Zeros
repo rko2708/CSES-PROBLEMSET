@@ -1,0 +1,26 @@
+Problem Statement
+Your task is to calculate the number of trailing zeros in the factorial n!.
+
+For example, 20!=2432902008176640000 and it has 4 trailing zeros.
+
+#include <bits/stdc++.h>
+using namespace std;
+#define int long long
+signed main() 
+{
+	ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+	int tests = 1; //cin>>tests;
+	while(tests--)
+	{
+		int n; cin>>n;
+		int x = 5;
+		int ans = 0;
+		while(n)
+		{
+			n/=x;
+			ans += n;
+		}
+		cout<<ans;
+	}
+	return 0;
+}
