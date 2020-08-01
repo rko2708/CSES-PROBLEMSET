@@ -1,0 +1,27 @@
+You are given an array of n integers. You want to modify the array so that it is increasing, i.e., every element is at least as large as the previous element.
+On each turn, you may increase the value of any element by one. What is the minimum number of turns required?
+
+#include <bits/stdc++.h>
+using namespace std;
+#define int long long
+signed main() 
+{
+	ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+	int tests = 1; //cin>>tests;
+	while(tests--)
+	{
+		int n; cin>>n;
+		int a[n];
+		int ans = 0;
+		for(int i=0;i<n;i++) cin>>a[i];
+		for(int i=1;i<n;i++)
+		{
+			if(a[i] > a[i-1]) continue;
+			int x = a[i-1] - a[i];
+			ans += x;
+			a[i] += x;
+		}
+		cout<< ans;
+	}
+	return 0;
+}
