@@ -7,7 +7,6 @@ Your task is to simulate the execution of the algorithm for a given value of n.
 
 #include <bits/stdc++.h>
 using namespace std;
-#define endl "\n"
 #define int long long
  
 signed main() 
